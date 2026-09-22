@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Spark plug">
+  <rect width="320" height="240" fill="#eef2f7"/>
+  <rect x="145" y="40" width="30" height="70" rx="6" fill="#f8f9fa" stroke="#adb5bd" stroke-width="2"/>
+  <rect x="138" y="110" width="44" height="30" fill="#6c757d"/>
+  <rect x="150" y="140" width="20" height="45" fill="#495057"/>
+  <text x="160" y="215" font-family="Segoe UI, sans-serif" font-size="16" fill="#495057" text-anchor="middle">Spark Plug</text>
+</svg>

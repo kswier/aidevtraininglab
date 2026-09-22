@@ -1,0 +1,53 @@
+@model WebAutoParts.Models.Part
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="Index">Parts Inventory</a></li>
+        <li class="breadcrumb-item active" aria-current="page">@Model.PartNumber</li>
+    </ol>
+</nav>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <img src="@Model.ImageUrl" alt="@Model.Name" class="img-fluid border rounded bg-white p-3 w-100" />
+            </div>
+            <div class="col-md-7">
+                <h1 class="h3">@Model.Name</h1>
+                <p class="text-muted">@Model.Description</p>
+
+                <dl class="row mb-0">
+                    <dt class="col-sm-4">Part Number</dt>
+                    <dd class="col-sm-8"><code>@Model.PartNumber</code></dd>
+
+                    <dt class="col-sm-4">Category</dt>
+                    <dd class="col-sm-8">@Model.Category</dd>
+
+                    <dt class="col-sm-4">Manufacturer</dt>
+                    <dd class="col-sm-8">@Model.Manufacturer</dd>
+
+                    <dt class="col-sm-4">Price</dt>
+                    <dd class="col-sm-8">@Model.Price.ToString("C")</dd>
+
+                    <dt class="col-sm-4">Quantity Available</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.InStock)
+                        {
+                            <span class="badge bg-success">@Model.QuantityAvailable in stock</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Out of stock</span>
+                        }
+                    </dd>
+                </dl>
+
+                <a asp-action="Index" class="btn btn-secondary mt-4">Back to Inventory</a>
+            </div>
+        </div>
+    </div>
+</div>

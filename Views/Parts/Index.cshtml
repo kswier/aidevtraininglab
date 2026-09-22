@@ -1,0 +1,54 @@
+@model IReadOnlyList<WebAutoParts.Models.Part>
+@{
+    ViewData["Title"] = "Parts Inventory";
+}
+
+<div class="d-flex align-items-center justify-content-between mb-3">
+    <div>
+        <h1 class="h3 mb-0">Parts Inventory</h1>
+        <small class="text-muted">@Model.Count parts on file</small>
+    </div>
+</div>
+
+<table class="table table-hover table-striped align-middle parts-table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col" style="width: 90px;">Photo</th>
+            <th scope="col">Part Name</th>
+            <th scope="col">Part Number</th>
+            <th scope="col">Category</th>
+            <th scope="col">Manufacturer</th>
+            <th scope="col" class="text-end">Price</th>
+            <th scope="col" class="text-end">Qty Available</th>
+            <th scope="col" class="text-end">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var part in Model)
+        {
+            <tr>
+                <td><img src="@part.ImageUrl" alt="@part.Name" class="parts-thumb" /></td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@part.Id" class="fw-semibold text-decoration-none">@part.Name</a>
+                </td>
+                <td><code>@part.PartNumber</code></td>
+                <td>@part.Category</td>
+                <td>@part.Manufacturer</td>
+                <td class="text-end">@part.Price.ToString("C")</td>
+                <td class="text-end">
+                    @if (part.InStock)
+                    {
+                        <span class="badge bg-success">@part.QuantityAvailable</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Out of stock</span>
+                    }
+                </td>
+                <td class="text-end">
+                    <a asp-action="Details" asp-route-id="@part.Id" class="btn btn-sm btn-outline-primary">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

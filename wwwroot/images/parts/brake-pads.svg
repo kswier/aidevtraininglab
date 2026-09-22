@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" width="320" height="240" role="img" aria-label="Brake pad set">
+  <rect width="320" height="240" fill="#eef2f7"/>
+  <rect x="60" y="70" width="200" height="40" rx="8" fill="#6c757d"/>
+  <rect x="60" y="110" width="200" height="18" rx="4" fill="#343a40"/>
+  <rect x="80" y="150" width="160" height="34" rx="8" fill="#adb5bd"/>
+  <text x="160" y="215" font-family="Segoe UI, sans-serif" font-size="16" fill="#495057" text-anchor="middle">Brake Pad Set</text>
+</svg>
